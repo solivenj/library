@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+html {
+    height: 100vh;
+    font-family: Nunito, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    width: 30%;
+    background-color: #457b9d;
+    justify-content: space-between;
+    /* position: -webkit-sticky; */
+    position: fixed;
+}
+
+.lib-text {
+    font-size: 4em;
+    color: #f1faee;
+}
+
+/* .new-book {
+
+} */
+
+.new-book-prompt {
+    font-size: 1.5em;
+    color: #f1faee;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: flex-start;
+}
+
+input {
+    font-family: Nunito, sans-serif;
+    border: none;
+    border-radius: 5px;
+    min-height: 3em;
+    width: 16em;
+    font-size: 1em;
+}
+
+form .num-pages .num-validation {
+    display: none;
+}
+
+.read {
+    display: flex;
+    gap: 1em;
+    font-size: 1.2em;
+}
+
+.read input {
+    width: 2em;
+    height: 2em;
+}
+
+.read p {
+    color: #f1faee;
+}
+
+.footer {
+    font-size: 1em;
+}
+
+.footer .profile-link {
+    color:#f1faee;
+    text-decoration: none; 
+    background-color: none;
+}
+
+main {
+    width: 70%;
+    text-align: center;
+    height: 150vh;
+}
+

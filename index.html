@@ -8,12 +8,41 @@
   <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body>
+    <div class="sidebar">
+        <h1 class="lib-text">Library</h1>
+        <div class="new-book">
+            <p class="new-book-prompt">Add a new book:</p>
+            <form>
+                <!-- <label for="title">Title</label> -->
+                <input type="text" id="title" name="title" value="Title" required>
+                <input type="text" id="author" name="author" value="Author" required>
+                <div class="num-pages">
+                    <input type="text" id="num-pages" name="num-pages" value="Number of Pages" required>
+                    <div class="num-validation">
+                        <p class="num-validation-text">Please enter a valid number.</p>
+                    </div>
+                </div>
+                <div class="read">
+                    <input type="checkbox" id="switch"/>
+                    <p class="toggle-text">Read?</p>
+                </div>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p id="copyright"></p>
+            <div id="github">
+                <a href="https://github.com/solivenj">John Soliven</p>
+                <a href="https://github.com/solivenj/library"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
     <main class="main">
-        
+        <h1 class="library" id="library">Books</h1>
     </main>
-    <script src="js/script.js"></script>
+    
 </body>
 <footer>
-    <script> </script>
+    <script src="js/script.js"></script>
 </footer>
 </html>

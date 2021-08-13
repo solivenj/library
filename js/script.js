@@ -43,7 +43,34 @@ function displayBooks() {
     }
 }
 
-// function createBookDiv(book) {
+function createBookDiv(book) {
+    let bookDiv = document.createElement("div");
+    let title = document.createElement("p");
+    let author = document.createElement("p");
+    let numPages = document.createElement("p");
+    let read = document.createElement("label");
+    let readToggle = document.createElement("checkbox");
+    let readSlider = document.createElement("span");
+    let removeButton = document.createElement("remove");
+    read.appendChild(readToggle);
+    read.appendChild(readSlider);
+    
 
-// }
+    title.textContent = `"${book.title}"`;
+    author.textContent = `${book.author}`;
+    numPages.textContent = `${book.numPages} pages`;
+    removeButton.textContent = 'Remove';
+
+    bookDiv.appendChild(title)
+    bookDiv.appendChild(author)
+    bookDiv.appendChild(numPages)
+    bookDiv.appendChild(removeButton)
+    
+
+    const booksContainer = document.getElementById("books-container");
+    body.appendChild(bookDiv);
+}
+
+let footer_copyright = document.getElementById("copyright");
+footer_copyright.textContent = `Copyright ${new Date().getFullYear()}`;
 

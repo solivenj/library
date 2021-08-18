@@ -1,5 +1,3 @@
-let myLibrary = [];
-
 class Library {
     constructor() {
         this.books = [];
@@ -31,10 +29,16 @@ class Book {
 }
 
 const library = new Library();
+const form = document.querySelector('form');
+// const textInputs = document.getElementById("text-inputs");
+const submitButton = document.getElementById('submit');
+const footerCopyright = document.getElementById("copyright-text");
+
+submitButton.onclick = () => form.reset(); // ingest values
 
 let book1 = new Book("Green Eggs & Ham", "Dr. Seuss", 62, true, "Children");
-
 library.addBook(book1);
+
 
 
 function displayBooks() {
@@ -71,6 +75,6 @@ function createBookDiv(book) {
     body.appendChild(bookDiv);
 }
 
-let footer_copyright = document.getElementById("copyright");
-footer_copyright.textContent = `Copyright ${new Date().getFullYear()}`;
+footerCopyright.textContent = `Copyright ${new Date().getFullYear()} 
+©`;
 

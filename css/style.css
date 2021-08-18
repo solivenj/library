@@ -11,6 +11,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #fffffe;
 }
 
 .sidebar {
@@ -18,16 +19,20 @@ body {
     flex-direction: column;
     height: 100%;
     align-items: center;
-    width: 30%;
-    background-color: #457b9d;
+    min-width: 30%;
+    background-color: #d1d1e9;
     justify-content: space-between;
     /* position: -webkit-sticky; */
     position: fixed;
+    top: 0;
+    gap: 1em;
 }
 
 .lib-text {
-    font-size: 4em;
-    color: #f1faee;
+    font-size: 3.5em;
+    color: #2b2c34;
+    height: 50px;
+    margin: .25em 0 0 0;
 }
 
 /* .new-book {
@@ -36,11 +41,18 @@ body {
 
 .new-book-prompt {
     font-size: 1.5em;
-    color: #f1faee;
+    color: #2b2c34;
     text-align: center;
 }
 
 form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: flex-start;
+}
+
+.text-inputs {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
@@ -54,6 +66,9 @@ input {
     min-height: 3em;
     width: 16em;
     font-size: 1em;
+    color: #2b2c34;
+    background-color: #fffffe;
+    padding: 0 .5em 0 .5em;
 }
 
 form .num-pages .num-validation {
@@ -72,22 +87,64 @@ form .num-pages .num-validation {
 }
 
 .read p {
-    color: #f1faee;
+    color: #2b2c34;
+}
+
+.submit {
+    background-color: #6246ea;
+    /* box-shadow: 1px 1px 1px black; */
+    color: #fffffe;
+}
+
+.submit:active {
+    background-color: #5134ea;
 }
 
 .footer {
     font-size: 1em;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
-.footer .profile-link {
-    color:#f1faee;
+.footer .copyright {
+    margin: 0;
+}
+
+.footer .github {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: .5em;
+}
+
+.footer .github .profile-link {
+    color: #2b2c34;
+    font-size: 1    em;
     text-decoration: none; 
     background-color: none;
+    transition: 0.3s;
+}
+
+.footer .github .profile-link:hover {
+    transform: scale(1.1);
+}
+
+.footer .github .repo-link {
+    padding-top: 0.1em;
+    transition: 0.3s;
+}
+
+.footer .github .repo-link:hover {
+    transform: scale(1.3);
 }
 
 main {
-    width: 70%;
+    margin-left: 25%;
+    width: 75%;
     text-align: center;
     height: 150vh;
+    min-width: 25%;
 }
 

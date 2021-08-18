@@ -4,6 +4,7 @@
   <title>Library</title>
   <meta charset="UTF-8"/>
   <link rel='stylesheet' href='css/style.css'>
+  <script src="https://kit.fontawesome.com/49188c7d26.js" crossorigin="anonymous"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
   <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
@@ -14,27 +15,33 @@
             <p class="new-book-prompt">Add a new book:</p>
             <form>
                 <!-- <label for="title">Title</label> -->
-                <input type="text" id="title" name="title" value="Title" required>
-                <input type="text" id="author" name="author" value="Author" required>
-                <div class="num-pages">
-                    <input type="text" id="num-pages" name="num-pages" value="Number of Pages" required>
-                    <div class="num-validation">
-                        <p class="num-validation-text">Please enter a valid number.</p>
+                <div class="text-inputs" id="text-inputs">
+                    <input type="text" id="title" name="title" placeholder="Title" required>
+                    <input type="text" id="author" name="author" placeholder="Author" required>
+                    <div class="num-pages">
+                        <input type="text" id="num-pages" name="num-pages" placeholder="Number of Pages" required>
+                        <div class="num-validation">
+                            <p class="num-validation-text">Please enter a valid number.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="read">
                     <input type="checkbox" id="switch"/>
                     <p class="toggle-text">Read?</p>
                 </div>
+                <input type="button" class="submit" id="submit" value="Submit">
             </form>
         </div>
 
         <div class="footer">
-            <p id="copyright"></p>
-            <div id="github">
+            <div id="copyright-text"></div>
+            <div class="github">
                 <a class="profile-link" href="https://github.com/solivenj">John Soliven</p>
-                <a href="https://github.com/solivenj/library"><i class="fab fa-github"></i></a>
+                <a class="repo-link" href="https://github.com/solivenj/library">
+                    <i class="fab fa-github fa-lg"></i>
+                </a>
             </div>
+            
         </div>
     </div>
     <main class="main">

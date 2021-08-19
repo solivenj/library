@@ -9,6 +9,7 @@ body {
     display: flex;
     flex-direction: row;
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     background-color: #fffffe;
@@ -19,7 +20,8 @@ body {
     flex-direction: column;
     height: 100%;
     align-items: center;
-    min-width: 30%;
+    min-width: 20em;
+    width: 30%;
     background-color: #d1d1e9;
     justify-content: space-between;
     /* position: -webkit-sticky; */
@@ -141,28 +143,32 @@ form .num-pages .num-validation {
 }
 
 main {
-    margin-left: 24em;
-    width: 75%;
+    margin-left: max(30%, 20em);
+    width: auto;
     text-align: center;
     min-height: 100vh;
-    min-width: 25%;
+    min-width: 70%;
+    position: relative
 }
 
 .books-header {
     font-size: 3.5em;
     color: #2b2c34;
     height: 50px;
-    margin: .25em 0 0 0;
+    margin: .25em 0 1em 0;
 }
 
-.book-container {
-    width: 80%;
-    height: 80%;
+.books-container {
+    margin: 0 2em 0 2em;
+    /* width: 80%; */
     padding: 1em;
-    border: 10px solid black;
+    border: 5px solid black;
+    border-radius: 30px;
+    display: grid;
 }
 
 .book-entry {
-
+    border: 2px solid blue;
+    width: 1fr;
 }
 

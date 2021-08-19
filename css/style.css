@@ -141,10 +141,28 @@ form .num-pages .num-validation {
 }
 
 main {
-    margin-left: 25%;
+    margin-left: 24em;
     width: 75%;
     text-align: center;
-    height: 150vh;
+    min-height: 100vh;
     min-width: 25%;
+}
+
+.books-header {
+    font-size: 3.5em;
+    color: #2b2c34;
+    height: 50px;
+    margin: .25em 0 0 0;
+}
+
+.book-container {
+    width: 80%;
+    height: 80%;
+    padding: 1em;
+    border: 10px solid black;
+}
+
+.book-entry {
+
 }
 

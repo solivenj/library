@@ -7,7 +7,7 @@ class Library {
         if (!this.books.some(book => book.title == bookToAdd.title)) {
             this.books.push(bookToAdd);
         }
-        this.updateBooks();
+        this.createbookTableEntry(bookToAdd.title, bookToAdd.author, bookToAdd.numPages, bookToAdd.read);
     }
 
     removeBook(bookToRemove) {
@@ -20,35 +20,46 @@ class Library {
 
     updateBooks() {
         this.books.forEach((book) => {
-            this.createBookDiv(book.title, book.author, book.numPages, book.read);
+            this.createbookTableEntry(book.title, book.author, book.numPages, book.read);
         });
     }
     
-    createBookDiv(titleText, authorText, numPagesText, readText) {
-        let bookDiv = document.createElement("div");
-        let title = document.createElement("p");
-        let author = document.createElement("p");
-        let numPages = document.createElement("p");
-        let read = document.createElement("label");
-        let readToggle = document.createElement("checkbox");
-        let readSlider = document.createElement("span");
-        let removeButton = document.createElement("remove");
-        read.appendChild(readToggle);
-        read.appendChild(readSlider);
+    createbookTableEntry(titleText, authorText, numPagesText, readText) {
+        let tr = document.createElement("tr")
+        let title = document.createElement("td");
+        let author = document.createElement("td");
+        let numPages = document.createElement("td");
+        let read = document.createElement("td");
+        let remove = document.createElement("td");
+
+        let readButton = document.createElement('button');
+        let removeButton = document.createElement('button');
         
+        read.appendChild(readButton);
+        remove.appendChild(removeButton);
+
         title.textContent = `"${titleText}"`;
         author.textContent = `${authorText}`;
         numPages.textContent = `${numPagesText} pages`;
+        
+        readButton.textContent = readText == true ? "Read" : "Not Read";
+        readButton.classList.add('read-button');
+        readButton.addEventListener('click',changeReadStatus);
+
         removeButton.textContent = 'Remove';
+        removeButton.classList.add('remove-button');
+        removeButton.addEventListener('click', removeRow);
+
     
-        bookDiv.appendChild(title)
-        bookDiv.appendChild(author)
-        bookDiv.appendChild(numPages)
-        bookDiv.appendChild(removeButton)
+        tr.appendChild(title);
+        tr.appendChild(author);
+        tr.appendChild(numPages);
+        tr.appendChild(read);
+        tr.appendChild(remove);
     
-        bookDiv.classList.add('book-entry');
-        const booksContainer = document.getElementById("books-container");
-        booksContainer.appendChild(bookDiv);
+        // bookTableEntry.classList.add('book-entry');
+        const tbody = document.querySelector("tbody");
+        tbody.appendChild(tr);
     }
 }
 
@@ -74,6 +85,15 @@ submitButton.onclick = function() {
     let newBook = new Book(titleInput.value, authorInput.value, Number(numPagesInput.value), readSwitch.checked);
     library.addBook(newBook);
     form.reset();
+}
+
+function changeReadStatus() {
+    this.textContent = this.textContent == "Read" ? "Not Read" : "Read";
+}
+
+function removeRow() {
+    let tr = this.parentNode.parentNode;
+    tr.remove();
 }
 
 let book1 = new Book("Green Eggs & Ham", "Dr. Seuss", 62, true, "Children");

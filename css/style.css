@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
 html {
     height: 100vh;
-    font-family: Nunito, sans-serif;
+    font-family: Raleway, sans-serif;
 }
 
 body {
@@ -36,10 +36,6 @@ body {
     height: 50px;
     margin: .25em 0 0 0;
 }
-
-/* .new-book {
-
-} */
 
 .new-book-prompt {
     font-size: 1.5em;
@@ -94,7 +90,7 @@ form .num-pages .num-validation {
 
 .submit {
     background-color: #6246ea;
-    /* box-shadow: 1px 1px 1px black; */
+    width: 100%;
     color: #fffffe;
 }
 
@@ -123,7 +119,7 @@ form .num-pages .num-validation {
 
 .footer .github .profile-link {
     color: #2b2c34;
-    font-size: 1    em;
+    /* font-size: 1em; */
     text-decoration: none; 
     background-color: none;
     transition: 0.3s;
@@ -154,21 +150,51 @@ main {
 .books-header {
     font-size: 3.5em;
     color: #2b2c34;
-    height: 50px;
+    /* height: 50px; */
     margin: .25em 0 1em 0;
 }
 
 .books-container {
-    margin: 0 2em 0 2em;
-    /* width: 80%; */
-    padding: 1em;
-    border: 5px solid black;
-    border-radius: 30px;
-    display: grid;
+    margin: auto;
+    width: 90%;
+    border-collapse: collapse;
 }
 
-.book-entry {
-    border: 2px solid blue;
-    width: 1fr;
+.books-container thead tr {
+    /* padding-bottom: px; */
+    border-bottom: 2px solid #d1d1e9;
+    font-size: 1.25em;
 }
+
+.books-container thead tr th {
+    padding-bottom: .5em;
+    font-size: 1em;
+}
+
+.books-container tbody tr {
+    border-bottom: 1px solid #d1d1e9;
+}
+.books-container tbody tr td {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.books-container tbody button {
+    padding: .25em 1em .25em 1em;
+    border: none;
+    color: #fffffe;
+    width: auto;
+    height: 2.5em;
+    border-radius: 5px;
+    box-shadow: none;    
+}
+
+.books-container tbody .read-button {
+    background-color: #6246ea;
+}
+
+.books-container tbody .remove-button {
+    background-color: #e45858;
+}
+
 

@@ -157,6 +157,7 @@ form .num-pages .num-validation {
 main {
     margin-left: max(30%, 20em);
     width: auto;
+    height: 100%;
     text-align: center;
     min-height: 100vh;
     min-width: 70%;
@@ -185,6 +186,7 @@ main {
     padding-bottom: .5em;
     font-size: 1em;
     width: 10em;
+    min-width: 5em;
 }
 
 .books-container tbody tr {
@@ -212,5 +214,11 @@ main {
 .books-container tbody .remove-button {
     background-color: #e45858;
 }
+
+/* @media (max-width: 1000px) {
+    body {
+        flex-direction: column;
+    }
+} */
 
 

@@ -77,11 +77,21 @@ const form = document.querySelector('form');
 const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
 const numPagesInput = document.getElementById('num-pages');
+const titleInputContainer = document.getElementById('title-container');
+const authorInputContainer = document.getElementById('author-container');
+const numPagesInputContainer = document.getElementById('num-pages-container');
 const readSwitch = document.getElementById('switch');
 const submitButton = document.getElementById('submit');
 const footerCopyright = document.getElementById("copyright-text");
+const inputContainers = document.querySelectorAll('.input-container[data-error] input');
+
+
 
 submitButton.onclick = function() {
+    if (!isValidForm()) {
+        return
+    }
+
     let newBook = new Book(titleInput.value, authorInput.value, Number(numPagesInput.value), readSwitch.checked);
     library.addBook(newBook);
     form.reset();
@@ -89,6 +99,35 @@ submitButton.onclick = function() {
 
 function changeReadStatus() {
     this.textContent = this.textContent == "Read" ? "Not Read" : "Read";
+}
+
+inputContainers.forEach(input => {
+    input.addEventListener('input', () =>  {
+        console.log("Remove attr");
+        input.parentElement.removeAttribute('data-error')
+    });
+});
+
+function isValidForm() {
+    if (titleInput.value != "" && authorInput.value != "" && Number(numPagesInput.value) > 0) {
+        return true;
+    }
+
+    if (titleInput.value == "") {
+        titleInputContainer.setAttribute('data-error', 'Please enter a valid title.')
+    }
+
+    if (authorInput.value == "") {
+        console.log('author')
+        authorInputContainer.setAttribute('data-error', 'Please enter a valid author name.');
+    } 
+
+    console.log(Number(numPagesInput.value))
+    if (Number(numPagesInput.value) <= 0) {
+        numPagesInputContainer.setAttribute('data-error', 'Please enter a valid number greater than 0.');
+    }
+
+    return false;
 }
 
 function removeRow() {

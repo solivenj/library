@@ -16,13 +16,14 @@
             <form>
                 <!-- <label for="title">Title</label> -->
                 <div class="text-inputs" id="text-inputs">
-                    <input type="text" id="title" name="title" placeholder="Title" required>
-                    <input type="text" id="author" name="author" placeholder="Author" required>
-                    <div class="num-pages">
+                    <div class="input-container" id="title-container">
+                        <input type="text" id="title" name="title" placeholder="Title" required>
+                    </div>
+                    <div class="input-container" id="author-container">
+                        <input type="text" id="author" name="author" placeholder="Author" required>
+                    </div>
+                    <div class="input-container" id="num-pages-container">
                         <input type="text" id="num-pages" name="num-pages" placeholder="Number of Pages" required>
-                        <div class="num-validation">
-                            <p class="num-validation-text">Please enter a valid number.</p>
-                        </div>
                     </div>
                 </div>
                 <div class="read">

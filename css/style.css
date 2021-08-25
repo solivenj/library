@@ -57,6 +57,22 @@ form {
     align-items: flex-start;
 }
 
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container [data-error] input{
+    color: red;
+}
+
+.input-container[data-error]::after {
+    content: attr(data-error);
+    margin-top: 1em;
+    color: red;
+    font-size: .9em;
+}
+
 input {
     font-family: Nunito, sans-serif;
     border: none;
@@ -161,7 +177,6 @@ main {
 }
 
 .books-container thead tr {
-    /* padding-bottom: px; */
     border-bottom: 2px solid #d1d1e9;
     font-size: 1.25em;
 }
@@ -169,6 +184,7 @@ main {
 .books-container thead tr th {
     padding-bottom: .5em;
     font-size: 1em;
+    width: 10em;
 }
 
 .books-container tbody tr {
